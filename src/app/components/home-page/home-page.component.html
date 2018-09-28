@@ -1,0 +1,45 @@
+<!-- <div class="loader centerd"></div> -->
+
+<!-- <div *ngIf="authService.isLogged()"> -->
+<!-- <div *ngIf="false">
+
+  <h1>Hello {{authService.user.username}},</h1>
+  <div class="container-fluid">
+    <h3>Email: {{authService.user.email}}</h3>
+    <h4>Member Since: {{authService.user.creation_dt|date}}</h4>
+  </div>
+  <div>{{authService.user|json}}</div>
+</div> -->
+
+<div>
+  <div class="jumbotron text-center">
+    <h1>All The Shows You Like</h1>
+    <p class="lead">Welcome to my MEAN stack application built from scratch </p>
+    <div>
+      <div *ngIf="authService.user">
+          <p class="lead">Hello {{authService.user.username}} !</p>
+
+      </div>
+      <div *ngIf="!authService.user">
+        <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
+        <a class="btn btn-dark" [routerLink]="['/login']">Login</a>
+      </div>
+      <!-- <button class="btn" (click)="onActionClick()">Action</button> -->
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <h3>Express Backend</h3>
+      <p>A rock solid Node.js/Express server using Mongoose to organize models and query the database</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Angular-CLI</h3>
+      <p>Angular-CLI to generate components, services and more. Local dev server and easy compilation</p>
+    </div>
+    <div class="col-md-4">
+      <h3>Passport JS</h3>
+      <p>Full featured authentication using passportJs local. Login and store user data</p>
+    </div>
+  </div>
+</div>

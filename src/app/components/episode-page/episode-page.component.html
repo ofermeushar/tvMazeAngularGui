@@ -1,0 +1,29 @@
+<div id="episodePageBody" *ngIf="isDataAvaible">
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-3">
+      <img [src]="episode.image!=null ? episode.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+    </div>
+
+    <div class="col-sm-8 col-md-8 col-lg-5">
+      <h1>{{episode.name}}</h1>
+      <div [innerHtml]="episode.summary"></div>
+
+      <h5>
+        <strong style="margin-right: 10px;">Air Date: </strong> {{episode.airdate}}</h5>
+      <h5>
+        <strong style="margin-right: 10px;">Air Time: </strong> {{episode.airtime}}</h5>
+
+
+    </div>
+
+  </div>
+</div>
+<footer class=" bg-dark footer">
+  <div class="container">
+    <div class="row">
+      <button  class=" btn" (click)="onPreviousEpisodeClick()">Previous Episode </button >
+      <button  class=" btn offset-lg-8 offset-md-8 offset-sm-5"(click)="onNextEpisodeClick()">Next Episode</button >
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+img{
+    width: 210px;
+    height: auto;
+  }
+#showPageBody{
+    margin: 16px 16px 0px 16px;
+}
+
+#cardContent{
+    height: 40vh;
+}
+
+#showCard{
+    margin-top: 16px;
+}
+
+.page-link{
+    background-color: #6c757d;
+}

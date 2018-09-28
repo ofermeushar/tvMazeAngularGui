@@ -1,0 +1,42 @@
+<div id="showPageBody" *ngIf="isDataAvaible">
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-3">
+      <img [src]="show.image!=null ? show.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+    </div>
+
+    <div class="col-sm-8 col-md-8 col-lg-5">
+      <h1>{{show.name}}</h1>
+      <div [innerHtml]="show.summary"></div>
+      <h4>Genres:</h4>
+      <a href="#" *ngFor="let g of show.genres">{{g}} </a>
+    </div>
+
+  </div>
+
+  <div id="showCard" class="card ">
+    <div class="card-header">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-primary" (click)="onDisplayClick($event)">Seasons</button>
+        <button type="button" class="btn btn-primary" (click)="onDisplayClick($event)">Cast</button>
+        <button type="button" class="btn btn-primary" (click)="onDisplayClick($event)">Crew</button>
+      </div>
+    </div>
+
+    <div id="cardContent " class="card-body  smooth-scroll">
+      <div [ngSwitch]="toDisplay">
+          <div *ngSwitchCase="'Seasons'">
+              <app-show-seasons [showId]="show.id"></app-show-seasons>
+          </div>
+          <div *ngSwitchCase="'Cast'">
+              <app-show-cast [showId]="show.id"></app-show-cast>
+          </div>
+          <div *ngSwitchCase="'Crew'">
+              <app-show-crew [showId]="show.id"></app-show-crew>
+          </div>
+          <div *ngSwitchDefault>Default</div>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">TvMaze</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto navbar-left">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/']">Home
+          </a>
+        </li>
+        
+      </ul>
+  
+      <form class="form-inline navbar-center">
+        <input [(ngModel)]="searchValue" name="searchValue" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="button" (click)="onSearchClick()">Search</button>
+      </form>
+  
+      <app-auth-drop-down></app-auth-drop-down>
+      
+    </div>
+  </nav>
+
+

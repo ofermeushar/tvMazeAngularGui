@@ -1,0 +1,15 @@
+<div *ngIf="isDataAvaible" class="card text-center" style="width: 18rem;" (click)="onShowCardClick()">
+    <div class="img__wrap ">
+      <!-- <img class="card-img-top" [src]="show.image.medium || unavaibleImage.jpg" [alt]="img"> -->
+      <img class="card-img-top" [src]="show.image!=null ? show.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+      <h3 class="img__description">{{show.rating.average||0}} \ 10
+        <h6 class=""[innerHtml]="show.summary"></h6>
+      </h3>
+  
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{show.name}}</h5>
+      <p class="card-text">{{show.genres}}</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+  </div>

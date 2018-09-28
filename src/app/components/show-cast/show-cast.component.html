@@ -1,0 +1,18 @@
+<div *ngIf="isDataAvaible">
+  <div *ngFor="let a of cast">
+    <div class="row ">
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <a [href]="a.person.image!=null ? a.person.image.original:'#'">
+          <img [src]="a.person.image!=null ? a.person.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+        </a>
+      </div>
+      <a href="#" [routerLink]="['/person',a.person.id]" class="col-sm-3 col-md-3 col-lg-3 ">
+        <strong>{{a.person.name}}</strong>
+      </a>
+      <div class="col-sm-1 col-md-1 col-lg-1"> As </div>
+      <div class="col-sm-3 col-md-3 col-lg-3 ">{{a.character.name}}</div>
+    </div>
+    <hr>
+  </div>
+
+</div>

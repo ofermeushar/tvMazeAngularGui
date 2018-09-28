@@ -1,0 +1,19 @@
+<div *ngIf="isDataAvaible">
+  <div *ngFor="let entery of crewCredits">
+    <div class="row ">
+
+      <div class="col-sm-1 col-md-1 col-lg-1">
+        <a [href]="entery.show.image!=null ? entery.show.image.original:'#'">
+          <img [src]="entery.show.image!=null ? entery.show.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+        </a>
+      </div>
+      <div class="col-sm-4 col-md-3 col-lg-2"> {{entery.type}}</div>
+      <div class="col-sm-1 col-md-1 col-lg-1">In </div>
+       <a href="#" [routerLink]="['/showPage',entery.show.id]" class="col-sm-4 col-md-3 col-lg-2 ">
+          <strong>{{entery.show.name}}</strong>
+        </a>
+    </div>
+    <hr>
+  </div>
+
+</div>

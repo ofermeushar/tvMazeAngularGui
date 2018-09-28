@@ -1,0 +1,50 @@
+<div *ngIf="isDataAvaible">
+
+  <div *ngFor="let s of seasons">
+    <div class="row">
+      <div class="col-sm-2 col-md-2 col-lg-2">
+        <img class="season-img" [src]="s.image!=null ? s.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+      </div>
+
+      <div class="col-sm-10 col-md-10 col-lg-10">
+        <div class="row">
+
+          <div class="col-sm-2 col-md-2 col-lg-2">
+            <p>Season {{s.number}}:{{s.name}}</p>
+          </div>
+
+          <div class="col-sm-10 col-md-10 col-lg-10">
+            <nav >
+              <ul class=" pagination pagination-sm" >
+                <li class="page-item " *ngFor="let e of s.episodes">
+                  <a [routerLink]="['/episode',{episodeId:e.id,seasonId:s.id}]" href="" class="border border-dark  page-link ">
+                    <strong> {{e.number||"*"}}</strong>
+                  </a>
+                  <hr>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- <div class="row" *ngIf="isDataAvaible">
+
+      <div *ngFor="let s of seasons" class="card">
+        <a [routerLink]="['/season',s.id]">
+        <img class="card-img-top season-img" [src]="s.image!=null ? s.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+        <div class="card-body">
+          <p class="card-title">Season {{s.number}}:{{s.name}}</p>
+        </div>
+      </a>
+      </div>
+    
+    </div> -->

@@ -1,0 +1,42 @@
+<div id="personProfilePageBody" *ngIf="isDataAvaible">
+
+  <div class="row">
+    <div class="col-sm-4 col-md-4 col-lg-3">
+      <img class="profilePic" [src]="person.iperson.image!=null ? person.iperson.image.medium : 'assets/unavaibleImage.jpg'" [alt]="img">
+    </div>
+
+    <div class="col-sm-8 col-md-8 col-lg-5">
+     
+        <h1>{{person.iperson.name}}</h1>
+        <h4>{{person.iperson.birthday|date:'yyyy'}} - {{(person.iperson.deathday|date:'yyyy') || 'now'}} </h4>
+      
+    </div>
+
+  </div>
+
+  <div id="showCard" class="card ">
+      <div class="card-header">
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <!-- <button type="button" class="btn btn-dark" (click)="onDisplayClick($event)">Seasons</button> -->
+          <button type="button" class="btn btn-primary" (click)="onDisplayClick($event)">Cast</button>
+          <button type="button" class="btn btn-primary" (click)="onDisplayClick($event)">Crew</button>
+        </div>
+      </div>
+  
+      <div id="cardContent " class="card-body  smooth-scroll">
+        <div [ngSwitch]="toDisplay">
+            <div *ngSwitchCase="'Seasons'">
+                <!-- <app-show-seasons [showId]="show.id"></app-show-seasons> -->
+            </div>
+            <div *ngSwitchCase="'Cast'">
+                <app-person-cast [personId]="person.iperson.id"></app-person-cast>
+            </div>
+            <div *ngSwitchCase="'Crew'">
+                <app-person-crew [personId]="person.iperson.id"></app-person-crew>
+            </div>
+            <div *ngSwitchDefault>Default</div>
+        </div>
+  
+      </div>
+    </div>
+</div>
