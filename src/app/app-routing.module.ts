@@ -10,7 +10,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { RegisterComponent } from "./components/register/register.component";
 
 const routes:Routes=[
-    {path: '',component:HomePageComponent},
+    {path: '',component:HomePageComponent,pathMatch:'full'},
     {path: 'searchResultsPage',component:SearchResultsPageComponent},
     {path: 'showPage/:id',component:ShowPageComponent},
     {path: 'person/:id',component:PesronProfilePageComponent},
