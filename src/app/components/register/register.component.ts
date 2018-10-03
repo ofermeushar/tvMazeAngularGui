@@ -25,7 +25,11 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  onPasswordChange(pass,cpass){
+  // onPasswordChange(pass,cpass){
+  //   this.isValidPass =this.registerForm.controls.password.value==this.registerForm.controls.cpass.value;
+  //   console.log(this.isValidPass);
+  // }
+  onPasswordChange(){
     this.isValidPass =this.registerForm.controls.password.value==this.registerForm.controls.cpass.value;
     console.log(this.isValidPass);
   }
